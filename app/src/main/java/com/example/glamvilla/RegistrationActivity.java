@@ -44,11 +44,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     Common.IS_USER_LOGGED_IN = attempt_login();
                     // Saving the data in the app
 
-
-
-                    // start otp activity
-//                    startActivity(new Intent(RegistrationActivity.this, OtpActivity.class));
-//                    finish();
+//                     start otp activity
+                    startActivity(new Intent(RegistrationActivity.this, OtpActivity.class));
+                    finish();
                 }else{
                     btn_submit.setClickable(true);
                     Toast.makeText(RegistrationActivity.this,errorMsg,Toast.LENGTH_LONG).show();
@@ -139,13 +137,14 @@ public class RegistrationActivity extends AppCompatActivity {
 //            mAuthTask.execute((Void) null);
         }
 
-//        Common.firstname = et_firstname.getText().toString();
-//        Common.lastname = et_lastname.getText().toString();
-//        Common.mobile_number = et_mobile_no.getText().toString();
-//        Common.email = et_email.getText().toString();
+        Common.firstname = et_firstname.getText().toString();
+        Common.lastname = et_lastname.getText().toString();
+        Common.mobile_number = et_mobile_no.getText().toString();
+        Common.email = et_email.getText().toString();
+        Common.password = password;
 
 
-        return true;
+        return !cancel;
     }
 
     private boolean isEmailValid(String email) {

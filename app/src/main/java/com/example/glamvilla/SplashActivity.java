@@ -2,6 +2,8 @@ package com.example.glamvilla;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +35,7 @@ public class SplashActivity extends AppCompatActivity {
      * Some older devices needs a small delay between UI widget updates
      * and a change of the status and navigation bar.
      */
+    DBHelper dbHelper;
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
@@ -97,6 +100,26 @@ public class SplashActivity extends AppCompatActivity {
 //            actionBar.setDisplayHomeAsUpEnabled(true);
 //        }
 
+//        // Create the database
+//        dbHelper = DBHelper.getInstance(this);
+//        try {
+//            dbHelper.createDataBase();
+//            System.out.println("database created.");
+//        } catch (Exception ioe) {
+//            throw new Error("Unable to create database");
+//        }
+//        try {
+//            dbHelper.openDataBase();
+//            dbHelper.create_table_if_not_exist();
+//            System.out.println("database opened.");
+//        } catch (SQLException sqle) {
+//
+//            throw sqle;
+//        }
+//
+//        // get user detail to knwow if logged or not
+//        PopulateUserDetails();
+
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
@@ -115,7 +138,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (Common.IS_USER_LOGGED_IN == false) {
 //                    btn_register.setVisibility(View.VISIBLE);
                 } else {
-                    Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -200,5 +223,28 @@ public class SplashActivity extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    // get user details from database
+
+    public void PopulateUserDetails() {
+
+//        Cursor cursorIslogged = dbHelper.getUser();
+//        if (cursorIslogged.getCount() > 0) {
+//            cursorIslogged.moveToFirst();
+//            Common.id = cursorIslogged.getInt(0);
+//            Common.uuid = cursorIslogged.getString(12);
+//            Common.location = cursorIslogged.getString(7);
+//            Common.firstname = cursorIslogged.getString(1);
+//            Common.lastname = cursorIslogged.getString(2);
+//            Common.mobile_number = cursorIslogged.getString(5);
+//            Common.email = cursorIslogged.getString(4) ;
+//            Common.IS_USER_LOGGED_IN = true;
+//        }else{
+//            Common.IS_USER_LOGGED_IN = false;
+//        }
+//        System.out.println("user info. extracted from database : "+cursorIslogged);
+//        cursorIslogged.close();
+
     }
 }
