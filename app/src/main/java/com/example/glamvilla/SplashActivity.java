@@ -138,7 +138,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (Common.IS_USER_LOGGED_IN == false) {
 //                    btn_register.setVisibility(View.VISIBLE);
                 } else {
-                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class MyCartActivity extends AppCompatActivity {
     ListView cart_list;
-    public static List<Cart> cartArrayList = new ArrayList<Cart>();
+    public List<Cart> cartArrayList = new ArrayList<Cart>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,18 +29,31 @@ public class MyCartActivity extends AppCompatActivity {
         tempCartObj.setShop_name("Raju spa");
         tempCartObj.setService_name("full body spa");
         tempCartObj.setService_uuid("123123123123123123123");
-        tempCartObj.setTime_slots("[12]");
+        tempCartObj.setTime_slots("12:00-13:00");
+        tempCartObj.setCost(1000);
         cartArrayList.add(tempCartObj);
 
         tempCartObj = new Cart();
         tempCartObj.setShop_name("Shyamu Sports");
         tempCartObj.setService_name("Cricket");
         tempCartObj.setService_uuid("1231231sdcmm23123123123");
-        tempCartObj.setTime_slots("[15,16]");
+        tempCartObj.setTime_slots("15:00-16:00");
+        tempCartObj.setCost(200);
         cartArrayList.add(tempCartObj);
 
         cart_list.setAdapter(new CartAdapter(getApplicationContext(),cartArrayList));
 
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

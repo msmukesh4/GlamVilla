@@ -1,5 +1,7 @@
 package com.example.glamvilla;
 
+import com.example.glamvilla.models.User;
+
 import java.util.ArrayList;
 
 /**
@@ -9,7 +11,7 @@ public class Common {
 
     public static boolean IS_USER_LOGGED_IN = true;
 
-
+    public static User global_user = new User();
 //    user info
     public static String uuid = null;
     public static String location = null;
@@ -20,6 +22,8 @@ public class Common {
     public static String email = null;
     public static String password = null;
     public static boolean registered = false;
+
+    public static int cart_items = 0;
 
     public static ArrayList<String> categories = new ArrayList<String>();
 

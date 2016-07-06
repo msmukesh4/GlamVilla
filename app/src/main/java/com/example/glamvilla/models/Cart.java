@@ -11,6 +11,13 @@ public class Cart {
     String time_slots;
     int cost;
 
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 
     public String getShop_name() {
         return shop_name;
