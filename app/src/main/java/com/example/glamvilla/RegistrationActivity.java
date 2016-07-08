@@ -36,13 +36,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 btn_submit.setClickable(false);
 
+                // validating the form
                 boolean login_success = attempt_login();
 
-                // validating the form
                 if(login_success) {
 
-                    Common.IS_USER_LOGGED_IN = attempt_login();
-                    // Saving the data in the app
+                    Common.IS_USER_LOGGED_IN = true;
+
 
 //                     start otp activity
                     startActivity(new Intent(RegistrationActivity.this, OtpActivity.class));
@@ -137,6 +137,7 @@ public class RegistrationActivity extends AppCompatActivity {
 //            mAuthTask.execute((Void) null);
         }
 
+        // Saving the data in the app
         Common.firstname = et_firstname.getText().toString();
         Common.lastname = et_lastname.getText().toString();
         Common.mobile_number = et_mobile_no.getText().toString();
