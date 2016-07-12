@@ -79,6 +79,7 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // show user booking list
                 Toast.makeText(getApplicationContext(), "bookings", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UserProfileActivity.this,BookingListActivity.class));
             }
         });
 

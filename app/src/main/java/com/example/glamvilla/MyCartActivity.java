@@ -18,12 +18,12 @@ public class MyCartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_cart);
+        setContentView(R.layout.activity_list_view);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        cart_list = (ListView) findViewById(R.id.cart_item_list);
+        cart_list = (ListView) findViewById(R.id.list_view);
 
         Cart tempCartObj = new Cart();
         tempCartObj.setShop_name("Raju spa");

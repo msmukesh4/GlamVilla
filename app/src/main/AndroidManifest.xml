@@ -44,6 +44,8 @@
         <activity android:name=".MyCartActivity"></activity>
         <activity android:name=".UserProfileActivity"></activity>
         <activity android:name=".ProfileEditActivity"></activity>
+        <activity android:name=".BookingListActivity"></activity>
+        <activity android:name=".BookingDetailsActivity"></activity>
     </application>
 
 </manifest>
